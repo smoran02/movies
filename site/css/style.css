@@ -1,0 +1,74 @@
+body {
+	background-color: #eee;
+}
+
+#addMovie div {
+	width: 550px;
+}
+
+#addMovie label {
+	width: 100px;
+	margin-right: 10px;
+	text-align: right;
+	line-height: 25px;
+}
+
+#addMovie label, #addMovie input {
+	display: block;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#addMovie label[for="title"], label[for="leadActors"], label[for="rating"] {
+	clear: both;
+}
+
+#addMovie button {
+	float: left;
+	margin-left: 110px;
+}
+
+#addMovie div:after {
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+}
+
+.movieContainer {
+    outline: 1px solid #aaa;
+    width: 350px;
+    height: 172px;
+    background-color: #fff;
+    float: left;
+    margin: 5px;
+}
+
+.movieContainer img {
+    float: left;
+    margin: 10px;
+}
+
+.movieContainer ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.movieContainer button {
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px;
+    width: 49px;
+    height: 19px;
+}
+
+.perfect {
+    background-color: #78AB46;
+}
+
+.zero {
+    background-color: #FF3333;
+}

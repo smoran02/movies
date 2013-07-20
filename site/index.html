@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Movie Ratings</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/cupertino/jquery-ui-1.10.3.custom.css">
+	</head>
+	<body>
+		<div id="movies">
+			<form id="addMovie" action="#">
+				<div>
+					<label for="movieImage">Movie Image: </label><input id="movieImage" type="file" />
+					<label for="title">Title: </label><input id="title" type="text" />
+					<label for="genres">Genres: </label><input id="genres" type="text" />
+					<label for="leadActors">Lead Actors: </label><input id="leadActors" type="text" />
+					<label for="releaseDate">Release Date: </label><input id="releaseDate" type="text" />
+					<label for="rating">My Rating: </label><input id="rating" type="text" />
+					<button id="add">Add</button>
+				</div>
+			</form>
+		</div>
+		<script id="movieTemplate" type="text/template">
+			<img src="<%= movieImage %>" />
+			<ul>
+				<li><%= title %></li>
+				<li><% _.each( genres, function( gen ) {%> <%= gen.genre %><% } ); %></li>
+				<li><% _.each( leadActors, function( lead ) {%> <%= lead.leadActor %><% } ); %></li>
+				<li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
+				<li><%= rating %>/5</li>
+			</ul>
+
+			<button class="edit">Edit</button>
+			<button class="delete">Delete</button>
+		</script>
+		<script src="js/lib/jquery.min.js"></script>
+		<script src="js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="js/lib/underscore-min.js"></script>
+		<script src="js/lib/backbone-min.js"></script>
+		<script src="js/lib/jquery-dateFormat-1.0.js"></script>
+		<script src="js/models/movie.js"></script>
+		<script src="js/collections/movies.js"></script>
+		<script src="js/views/movie.js"></script>
+		<script src="js/views/movies.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

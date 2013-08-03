@@ -37,7 +37,11 @@ app.get( '/api', function( request, response ) {
 	response.send( 'Movie api is running' );
 });
 
-mongoose.connect( uristring );
+if (err) { 
+ console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+ } else {
+ console.log ('Succeeded connected to: ' + uristring);
+ }
 
 var Genres = new mongoose.Schema({
 	genre: String

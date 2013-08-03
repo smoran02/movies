@@ -7,6 +7,12 @@ var application_root = __dirname,
 
 var app = express();
 
+var uristring = 
+process.env.MONGOLAB_URI || 
+process.env.MONGOHQ_URL || 
+'mongodb://localhost/movie_db';
+
+
 app.configure( function() { 
 
 	app.use( express.bodyParser() );
@@ -31,7 +37,7 @@ app.get( '/api', function( request, response ) {
 	response.send( 'Movie api is running' );
 });
 
-mongoose.connect( 'mongodb://localhost/movie_db' );
+mongoose.connect( uristring );
 
 var Genres = new mongoose.Schema({
 	genre: String

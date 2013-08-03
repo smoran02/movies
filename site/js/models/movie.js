@@ -9,8 +9,8 @@ app.Movie = Backbone.Model.extend({
 		title: 'No title',
 		genres: 'No genres',
 		leadActors: 'No actors',
-		releaseDate: 'No date',
-		rating: 'No rating'
+		releaseDate: new Date(),
+		rating: -1
 	},
 
 	parse: function( response ) {

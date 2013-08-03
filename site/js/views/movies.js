@@ -40,12 +40,12 @@ app.MoviesView = Backbone.View.extend({
 	        {
 	            if ( el.id === 'genres' ) {
 	                formData[ el.id ] = [];
-	                _.each( $( el ).val().split( ' ' ), function( genre ) {
+	                _.each( $( el ).val().split( ',' ), function( genre ) {
 	                    formData[ el.id ].push({ 'genre': genre });
 	                });
 	            } else if ( el.id == 'leadActors' ) {
 	            	formData[ el.id ] = [];
-	            	_.each( $( el ).val().split( ' ' ), function( leadActor ) {
+	            	_.each( $( el ).val().split( ',r(' ), function( leadActor ) {
 	            	    formData[ el.id ].push({ 'leadActor': leadActor });
 	            	});
 	            } else if ( el.id === 'releaseDate' ) {

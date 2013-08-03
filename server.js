@@ -23,7 +23,7 @@ app.configure( function() {
 
 var port = 4040;
 
-app.listen( port, function() { 
+app.listen( process.env.PORT || port, function() { 
 	console.log( "Express server listening on port %d in %s mode", port, app.settings.env );
 });
 
